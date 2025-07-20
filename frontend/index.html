@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Data Extractor</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <header class="app-header">
+            <h1><i class="fas fa-file-medical"></i> Medical Data Extractor</h1>
+            <p>Upload medical documents to extract structured patient information</p>
+        </header>
+
+        <main class="app-main">
+            <div class="upload-section">
+                <div class="upload-box" id="dropZone">
+                    <i class="fas fa-cloud-upload-alt upload-icon"></i>
+                    <h3>Drag & Drop Files Here</h3>
+                    <p>or</p>
+                    <input type="file" id="fileInput" accept=".pdf,.jpg,.jpeg,.png,.docx">
+                    <label for="fileInput" class="browse-btn">Browse Files</label>
+                    <p class="file-types">Supported formats: PDF, JPG, PNG, DOCX</p>
+                </div>
+            </div>
+
+            <div class="results-section" id="resultsSection" style="display: none;">
+                <div class="tabs">
+                    <button class="tab-btn active" data-tab="patient">Patient Info</button>
+                    <button class="tab-btn" data-tab="medical">Medical Data</button>
+                    <button class="tab-btn" data-tab="raw">Raw Text</button>
+                </div>
+
+                <div class="tab-content active" id="patientTab">
+                    <div class="info-card">
+                        <h3><i class="fas fa-user"></i> Patient Information</h3>
+                        <div class="info-grid" id="patientInfo">
+                            <!-- Patient info will be populated here -->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-content" id="medicalTab">
+                    <div class="info-card">
+                        <h3><i class="fas fa-diagnoses"></i> Diagnosis</h3>
+                        <div id="diagnosisInfo"></div>
+                    </div>
+
+                    <div class="info-card">
+                        <h3><i class="fas fa-pills"></i> Medications</h3>
+                        <ul id="medicationsList"></ul>
+                    </div>
+
+                    <div class="info-card">
+                        <h3><i class="fas fa-allergies"></i> Allergies</h3>
+                        <ul id="allergiesList"></ul>
+                    </div>
+
+                    <div class="info-card">
+                        <h3><i class="fas fa-procedures"></i> Procedures</h3>
+                        <ul id="proceduresList"></ul>
+                    </div>
+                </div>
+
+                <div class="tab-content" id="rawTab">
+                    <div class="info-card">
+                        <h3><i class="fas fa-file-alt"></i> Extracted Text</h3>
+                        <pre id="rawTextContent"></pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="loading-section" id="loadingSection" style="display: none;">
+                <div class="loading-spinner"></div>
+                <p>Processing document...</p>
+            </div>
+        </main>
+
+        <footer class="app-footer">
+            <p>Medical Data Extractor &copy; 2023 | For demonstration purposes only</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
