@@ -40,27 +40,25 @@ Install these system dependencies before running:
 ---
 
 ## 🔧 Installation
-
-```bash
 # 1. Clone the repository
 git clone https://github.com/Maariakh-cs/medex.git
 cd medex
-
 # 2. Create and activate a virtual environment
 python -m venv venv
 venv\Scripts\activate  # Windows
 # or
 source venv/bin/activate  # macOS/Linux
-
 # 3. Install dependencies
 pip install -r requirements.txt
 
+---
+
 ## ▶️ Run the App
-bash
-Copy code
 # Start FastAPI backend
 uvicorn backend.main:app --reload
 Then open frontend/index.html in your browser (you can use Live Server or just double-click to open locally).
+
+---
 
 ## 📁 Folder Structure
 medex/
@@ -77,6 +75,7 @@ medex/
 ├── requirements.txt     # All Python dependencies
 └── README.md            # You're reading it!
 
+---
 
 ## 🧪 Supported File Types
 .pdf – scanned or digital PDFs
@@ -85,6 +84,7 @@ medex/
 
 .docx – Microsoft Word documents
 
+---
 
 ## 🧠 Example Output
 json
@@ -111,4 +111,18 @@ Copy code
   "message": "Extraction successful"
 }
 
+---
+
+## 📈 Future Enhancements
+PDF section-wise analysis (e.g., headers like "Assessment", "Plan")
+Export extracted data as CSV or PDF
+User login and document history
+LLM integration for summarization or diagnostics
+
+---
+
+## 🙋‍♀️ Author
+Maaria Khan
+Final Year Computer Science Engineering Student
+🔗www.linkedin.com/in/maariak-cs
 
